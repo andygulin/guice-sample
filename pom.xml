@@ -12,7 +12,6 @@
 		<compile.level>1.8</compile.level>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<spring.version>4.3.3.RELEASE</spring.version>
 		<guice.version>4.1.0</guice.version>
 		<junit.version>4.12</junit.version>
 		<log4j.version>2.6.2</log4j.version>
@@ -22,11 +21,6 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
 		<dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
