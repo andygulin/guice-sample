@@ -13,9 +13,6 @@ public class FileAuthServiceImpl implements AuthService {
         ResourceBundle bundle = ResourceBundle.getBundle("auth");
         String name = bundle.getString("username");
         String pass = bundle.getString("password");
-        if (username.equals(name) && password.equals(pass)) {
-            return true;
-        }
-        return false;
+        return username.equals(name) && password.equals(pass);
     }
 }

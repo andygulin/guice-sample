@@ -8,9 +8,6 @@ public class SimpleAuthServiceImpl implements AuthService {
 
     @Override
     public boolean login(String username, String password) {
-        if (username.equals("root") && password.equals("root")) {
-            return true;
-        }
-        return false;
+        return username.equals("root") && password.equals("root");
     }
 }
