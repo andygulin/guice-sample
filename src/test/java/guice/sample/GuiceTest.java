@@ -6,9 +6,11 @@ import guice.sample.service.AuthService;
 import guice.sample.service.HelloService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GuiceTest {
 
@@ -16,7 +18,7 @@ public class GuiceTest {
 
     private Injector injector;
 
-    @Before
+    @BeforeEach
     public void init() {
         injector = Guice.createInjector();
     }
@@ -24,14 +26,14 @@ public class GuiceTest {
     @Test
     public void helloServiceTest() {
         HelloService helloService = injector.getInstance(HelloService.class);
-        Assert.assertEquals("HelloServiceImpl",helloService.getClass().getSimpleName());
-        Assert.assertEquals("Hello World",helloService.sayHello("World"));
+        assertEquals("HelloServiceImpl", helloService.getClass().getSimpleName());
+        assertEquals("Hello World", helloService.sayHello("World"));
     }
 
     @Test
     public void authServiceTest() {
         AuthService authService = injector.getInstance(AuthService.class);
-        Assert.assertEquals("FileAuthServiceImpl",authService.getClass().getSimpleName());
-        Assert.assertTrue(authService.login("root", "root"));
+        assertEquals("FileAuthServiceImpl", authService.getClass().getSimpleName());
+        assertTrue(authService.login("root", "root"));
     }
 }
